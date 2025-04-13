@@ -184,7 +184,10 @@ a:hover {
 
 /* Page Header */
 .page-header {
-    background-color: var(--secondary);
+    background: repeating-linear-gradient(204deg, var(--primary) 0%, var(--primary) 25%, #000000 25%, #000000 50%);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    color: var(--black);
     padding: 8rem 0 4rem;
     text-align: center;
 }

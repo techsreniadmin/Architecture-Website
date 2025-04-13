@@ -2,6 +2,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Set current year in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Navbar scroll behavior
+    const navbar = document.querySelector('.navbar');
+    
+    function handleScroll() {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    }
+    
+    window.addEventListener('scroll', handleScroll);
+
+    // Handle initial scroll state
+    handleScroll();
     
     // DOM elements
     const projectsContainer = document.getElementById('projects-container');
