@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ARCHIFY</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">ARCHIFY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p class="lead">We'd love to hear from you. Let's discuss your next project.</p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section py-5">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Contact Form -->
+                <div class="col-lg-6">
+                    <div class="bg-light p-4 p-md-5 rounded shadow-sm">
+                        <h2 class="h3 mb-4">Contact Form</h2>
+                        
+                        <!-- Alert Messages -->
+                        <div id="form-success" class="alert alert-success d-none" role="alert">
+                            <i class="fas fa-check-circle me-2"></i> Your message has been sent successfully. We'll get back to you soon!
+                        </div>
+                        
+                        <div id="form-error" class="alert alert-danger d-none" role="alert">
+                            <i class="fas fa-exclamation-circle me-2"></i> There was an error sending your message. Please try again later.
+                        </div>
+                        
+                        <form id="contact-form">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name *</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                                <div class="invalid-feedback">
+                                    Please enter your name.
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="project-type" class="form-label">Project Type *</label>
+                                <select class="form-select" id="project-type" name="project-type" required>
+                                    <option value="" selected disabled>Select project type</option>
+                                    <option value="residential">Residential</option>
+                                    <option value="commercial">Commercial</option>
+                                    <option value="landscape">Landscape</option>
+                                    <option value="cultural">Cultural</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a project type.
+                                </div>
+                            </div>
+                            
+                            <!-- Dynamic Form Fields Container -->
+                            <div id="dynamic-fields">
+                                <!-- Dynamic fields will be added here based on project type -->
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter a message (minimum 10 characters).
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="file-upload" class="form-label">Attachments (optional)</label>
+                                <input class="form-control" type="file" id="file-upload" name="file-upload" multiple>
+                                <div class="form-text">You can upload images, PDFs, or CAD files (max 10MB each).</div>
+                            </div>
+                            
+                            <button type="submit" id="submit-btn" class="btn btn-primary w-100">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Map and Contact Info -->
+                <div class="col-lg-6">
+                    <div class="mb-5">
+                        <h2 class="h3 mb-4">Our Locations</h2>
+                        <div id="project-map" class="map-container"></div>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="contact-info-card bg-light p-4 rounded shadow-sm h-100">
+                                <h3 class="h5 mb-3">Toronto Office</h3>
+                                <address class="mb-0">
+                                    <p><i class="fas fa-map-marker-alt me-2 text-primary"></i> 123 Design Street, Toronto, ON M5V 2K6</p>
+                                    <p><i class="fas fa-phone me-2 text-primary"></i> +1 (416) 555-1234</p>
+                                    <p class="mb-0"><i class="fas fa-envelope me-2 text-primary"></i> toronto@archify.com</p>
+                                </address>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="contact-info-card bg-light p-4 rounded shadow-sm h-100">
+                                <h3 class="h5 mb-3">Vancouver Office</h3>
+                                <address class="mb-0">
+                                    <p><i class="fas fa-map-marker-alt me-2 text-primary"></i> 456 Pacific Avenue, Vancouver, BC V6G 1P5</p>
+                                    <p><i class="fas fa-phone me-2 text-primary"></i> +1 (604) 555-9876</p>
+                                    <p class="mb-0"><i class="fas fa-envelope me-2 text-primary"></i> vancouver@archify.com</p>
+                                </address>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <h3>ARCHIFY</h3>
+                    <p>Award-winning architectural design firm creating thoughtful, sustainable spaces since 2010.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li>Residential Design</li>
+                        <li>Commercial Architecture</li>
+                        <li>Landscape Planning</li>
+                        <li>Interior Design</li>
+                        <li>Sustainable Solutions</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h3>Contact Info</h3>
+                    <address>
+                        <p>123 Design Street</p>
+                        <p>Toronto, ON M5V 2K6</p>
+                        <p>Canada</p>
+                        <p class="mt-2">
+                            <a href="mailto:hello@archify.com">hello@archify.com</a>
+                        </p>
+                        <p>
+                            <a href="tel:+14165551234">+1 (416) 555-1234</a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-md-0">© <span id="current-year"></span> Archify. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#" class="back-to-top">
+                            Back to top <i class="fas fa-arrow-up ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Project Data -->
+    <script src="js/projectData.js"></script>
+    <!-- Contact JS -->
+    <script src="js/contact.js"></script>
+</body>
+</html>

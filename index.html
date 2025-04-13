@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCHIFY - Modern Architecture Studio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">ARCHIFY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 text-center hero-content">
+                    <h1 class="fade-in">Crafting Spaces<br>Defining Experiences</h1>
+                    <p class="fade-in">Award-winning architectural design studio focused on creating thoughtful, sustainable spaces that inspire.</p>
+                    <div class="hero-buttons fade-in">
+                        <a href="projects.html" class="btn btn-primary">View Our Work</a>
+                        <a href="contact.html" class="btn btn-outline-light">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#featured-projects" class="scroll-down">
+            <i class="fas fa-arrow-down"></i>
+        </a>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="featured-projects" class="featured-projects py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Featured Projects</h2>
+                <p class="text-muted">Explore our showcase of innovative architectural designs spanning residential, commercial, cultural, and landscape projects.</p>
+            </div>
+
+            <div class="row">
+                <!-- Project cards will be dynamically loaded from JS -->
+                <div id="featured-projects-container" class="row g-4"></div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="projects.html" class="btn btn-primary">
+                    View All Projects <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800" alt="Modern architecture" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2>About Archify</h2>
+                    <p class="lead">We create spaces that inspire and endure.</p>
+                    <p>Founded in 2010, Archify has established itself as a leading architecture studio focused on innovative, sustainable design. Our team of experienced architects and designers work closely with clients to bring their vision to life.</p>
+                    <p>We believe in creating spaces that not only meet practical needs but also elevate the human experience through thoughtful design, natural light, and harmony with surroundings.</p>
+                    <a href="contact.html" class="btn btn-outline-primary mt-3">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <h3>ARCHIFY</h3>
+                    <p>Award-winning architectural design firm creating thoughtful, sustainable spaces since 2010.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li>Residential Design</li>
+                        <li>Commercial Architecture</li>
+                        <li>Landscape Planning</li>
+                        <li>Interior Design</li>
+                        <li>Sustainable Solutions</li>
+                    </ul>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <h3>Contact Info</h3>
+                    <address>
+                        <p>123 Design Street</p>
+                        <p>Toronto, ON M5V 2K6</p>
+                        <p>Canada</p>
+                        <p class="mt-2">
+                            <a href="mailto:hello@archify.com">hello@archify.com</a>
+                        </p>
+                        <p>
+                            <a href="tel:+14165551234">+1 (416) 555-1234</a>
+                        </p>
+                    </address>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="mb-md-0">© <span id="current-year"></span> Archify. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#" class="back-to-top">
+                            Back to top <i class="fas fa-arrow-up ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Project Data -->
+    <script src="js/projectData.js"></script>
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

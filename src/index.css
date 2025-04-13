@@ -1,0 +1,88 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 10% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 4%;
+
+    --primary: 259 75% 75%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 220 5% 96%;
+    --secondary-foreground: 220 10% 4%;
+
+    --muted: 220 5% 96%;
+    --muted-foreground: 220 5% 40%;
+
+    --accent: 259 75% 75%;
+    --accent-foreground: 220 10% 4%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 10% 90%;
+    --input: 220 10% 90%;
+    --ring: 259 75% 75%;
+
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans scroll-smooth;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-md transition-all;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50;
+  }
+  
+  .project-card {
+    @apply bg-card rounded-md overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+  
+  .project-image {
+    @apply aspect-[4/3] object-cover w-full;
+  }
+  
+  .filter-btn {
+    @apply px-4 py-2 rounded-md border border-border bg-background hover:bg-secondary transition-colors duration-200;
+  }
+  
+  .filter-btn.active {
+    @apply bg-primary text-primary-foreground border-primary;
+  }
+}
